@@ -3,6 +3,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 dotenv.config(); 
 require('./config/database.cjs')
+const port = 4002
 
 const { createTweet, getTweets, updateTweet, deleteTweet } = require('./controllers/tweets.cjs')
 
@@ -24,6 +25,6 @@ app.put('/tweets/:tweetId/:newTitle', updateTweet)
 app.delete('/tweets/:tweetId', deleteTweet)
 
 
-app.listen(4002, () => {
+app.listen(port, () => {
     console.log("listening on 4002")
 })

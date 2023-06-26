@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
 const mongoose = require('mongoose')
 
-
-
 const tweetSchema = new mongoose.Schema(
     {
         title: String,

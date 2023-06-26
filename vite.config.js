@@ -7,7 +7,6 @@ export default defineConfig({
   server: {
     proxy: {
       "/tweets": "http://localhost:4002"
-      
     }
   }
 })
