@@ -1,12 +1,21 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+const connectDBs = () => {
+    try {
+        const TweetDb = mongoose.createConnection(process.env.MONGO_URL, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        })
+        const userDB = mongoose.createConnection(process.env.MONGO_URL_ACTIVE_USERS, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        })
+        return { TweetDb, userDB }
+    } catch (error) {
+        console.error(`Error:${error.message}`)
+        process.exit(1)
+    }
+}
 
-
-mongoose.connection.once('open', ()=> {
-    console.log('connected to mongo');
-});
+module.exports = { connectDBs }

@@ -4,7 +4,15 @@
   padding: 2rem;
   text-align: center;
 }
-
+h1{
+  color: white;
+}
+label{
+  color: white;
+}
+body{
+  background-color: #002185;
+}
 .logo {
   height: 6em;
   padding: 1.5em;

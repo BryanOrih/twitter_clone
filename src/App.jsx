@@ -16,7 +16,6 @@ function App() {
         let arrayFromCollection = res.data;
         // res.status res.something res.data
         // now we have array  of tweets from database
-        console.log(res);
         setTweets(arrayFromCollection)
       })
     }, []);
@@ -35,6 +34,7 @@ function App() {
     <h1>My Twitter Clone</h1>
     <nav>
       <Link to="/">Home</Link>
+      <br/>
       <Link to="/signup">SignUp</Link>
     </nav>
     {/* PAGES HERE */}

@@ -1,5 +1,4 @@
-
-const Tweet = require('../models/Tweet.cjs')
+const {Tweet} = require('../models/Tweet.cjs')
 
 
 const createTweet = async (req, res) => {

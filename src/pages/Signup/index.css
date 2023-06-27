@@ -1,0 +1,11 @@
+form > button{
+    margin-top: 10px;
+}
+form> p{
+    color: white;
+    padding: 0px;
+    margin: 0px
+}
+form > p:nth-last-child(2){
+    margin-top: 15px ;
+}

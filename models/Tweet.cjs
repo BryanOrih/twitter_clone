@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const mongoose = require('mongoose')
-
+const {connectDBs} = require('../config/database.cjs')
 const tweetSchema = new mongoose.Schema(
     {
         title: String,
@@ -13,6 +13,8 @@ const tweetSchema = new mongoose.Schema(
     {timestamps: true}
 );
 
-const Tweet = mongoose.model('Tweet', tweetSchema);
+const { TweetDb } = connectDBs()
 
-module.exports = Tweet;
+module.exports = {
+    Tweet: TweetDb.model('Tweet', tweetSchema)
+}
